@@ -11,6 +11,8 @@ import JournalData from "./components/journal/JournalData";
 import Test from "./components/test/Test";
 import Profile from "./components/account/Profile"
 import NoMatch from "./components/noMatch/NoMatch";
+import Admin from "./components/admin/Admin"
+import Notifications from "@mui/icons-material/Notifications";
 
 // =============================
 
@@ -44,8 +46,8 @@ const App = () => {
           <Route path="/journals/" element={<Journal />} />
         </Route>
 
-        <Route path='/student' element={<PrivateRoute isAuthenticated={isAuthenticated} />} >
-          <Route path='/student' element={<Student />} />
+        <Route path='/student/' element={<PrivateRoute isAuthenticated={isAuthenticated} />} >
+          <Route path='/student/' element={<Student />} />
         </Route>
 
 
@@ -68,6 +70,10 @@ const App = () => {
           <Route path='/usercreatejournal' element={<CreateJournal />} />
         </Route>
 
+        <Route path='/notifications' element={<PrivateRoute isAuthenticated={isAuthenticated} />} >
+          <Route path='/notifications' element={<Notifications />} />
+        </Route>
+
         <Route path='/test' element={<PrivateRoute isAuthenticated={isAuthenticated} />} >
           <Route path="/test" element={<Test />} />
         </Route>
@@ -75,6 +81,10 @@ const App = () => {
 
 
         {/* Admin Routes */}
+
+        <Route path='/admin' element={<PrivateRoute isAuthenticated={isAuthenticated} />} >
+          <Route path="/admin" element={<Admin />} />
+        </Route>
 
         {/* ---------------------------------- */}
         <Route path="*" element={<NoMatch />} />
