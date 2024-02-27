@@ -1,6 +1,9 @@
 import React from 'react'
 import Sidebar from "./Sidebar"
 import SidebarItem from './Sidebar'
+import JournalCard from './JournalCard'
+
+
 const Journal = () => {
   return (
     <div>
@@ -10,16 +13,15 @@ const Journal = () => {
 
       }}>
         <div style={{
-          width: "22%",
-          marginLeft: "5px",
-          height: "100%",
+          width: "30%",
+          height: "100vh",
           backgroundColor: "rgba(195, 195, 195, 0.152)",
           backdropFilter: "blur(10px)",
-          boxShadow: " 0 0 40px rgba(0, 0, 0, 0.8)",
+          boxShadow: " 0 0 10px rgba(0, 0, 0, 0.2)",
           marginTop: "5px",
 
         }}>
-          <SidebarItem elevation={8} />
+          <Sidebar elevation={8} />
 
         </div>
 
@@ -27,17 +29,16 @@ const Journal = () => {
           width: "80%",
           margin: "0px 5px",
           height: "100vh",
-          backgroundColor: "yellow",
           marginTop: "5px"
 
-        }}>Main</div>
+        }}>
+        
+      
+        <JournalCard/>
+        
+        </div>
 
       </div>
-
-
-
-
-
 
     </div>
   )
